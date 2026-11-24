@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Базовые сбросы и единая типографика */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  line-height: 1.5;
+}
+
+/* Шапка и меню навигации */
+.site-header {
+  background-color: #1e293b;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 16px;
+}
+
+.nav-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: #34d399;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #34d399;
+}
+
+/* Контейнер страниц и заголовки */
+.home-page {
+  min-height: calc(100vh - 65px);
+  padding: 40px 16px;
+}
+
+.home-container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.home-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 32px;
+}
+
+/* Сетка карточек на главной странице */
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.car-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Карточка автомобиля */
+.car-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.car-card-link:hover .car-card {
+  transform: translateY(-3px);
+  border-color: #34d399;
+}
+
+.car-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.car-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.car-seats {
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+  background-color: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.car-desc {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.car-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #34d399;
+}
+
+/* Страница машины и кнопка аренды */
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #34d399;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.detail-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 14px;
+  padding: 28px;
+  max-width: 640px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35);
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.detail-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.detail-desc {
+  font-size: 15px;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.days-control {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.days-label {
+  font-size: 15px;
+  color: #e2e8f0;
+}
+
+.days-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.day-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background-color: #0f172a;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-btn:hover:not(:disabled) {
+  border-color: #34d399;
+  color: #34d399;
+}
+
+.day-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.days-count {
+  min-width: 28px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.total-price {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #34d399;
+}
+
+.rent-btn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #34d399;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.rent-btn:hover {
+  opacity: 0.9;
+}
+
+/* Список аренд на странице «Мои аренды» */
+.bookings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 720px;
+}
+
+.booking-item {
+  background-color: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bookings-summary {
+  margin-top: 8px;
+  padding: 20px 24px;
+  background-color: #1e293b;
+  border: 1px solid #34d399;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bookings-summary .total-price {
+  margin-top: 0;
+}
+
+.empty-bookings {
+  background-color: #1e293b;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 540px;
+}
+
+/* Экраны загрузки и ошибки */
+.status-screen {
+  min-height: calc(100vh - 65px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.status-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.status-error {
+  font-size: 18px;
+  color: #f87171;
+}
